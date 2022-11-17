@@ -1,0 +1,39 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+    name: bad-gitrepository01
+spec:
+    interval: 1h
+    ref:
+        branch: master
+    url: https://github.com/Fake/k8s-fake
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+    name: bad-gitrepository02
+spec:
+    interval: 1h
+    ref:
+        branch: master
+    url: ssh://git@github.com/Fake/k8s-fake
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+    name: good-gitrepository01
+spec:
+    interval: 1h
+    ref:
+        branch: master
+    url: https://github.com/swapnild2111/k8s-fake
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+    name: good-gitrepository02
+spec:
+    interval: 1h
+    ref:
+        branch: master
+    url: ssh://git@github.com/Fake/k8s-fake

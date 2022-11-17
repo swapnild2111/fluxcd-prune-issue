@@ -1,0 +1,26 @@
+name: verify-flux-sources
+policies:
+  - verify_flux_sources.yaml
+resources:
+  - resource.yaml
+results:
+  - policy: verify-flux-sources
+    rule: flux-github-repositories
+    resource: bad-gitrepository01
+    kind: GitRepository
+    result: fail
+  - policy: verify-flux-sources
+    rule: flux-github-repositories
+    resource: bad-gitrepository02
+    kind: GitRepository
+    result: fail
+  - policy: verify-flux-sources
+    rule: flux-github-repositories
+    resource: good-gitrepository01
+    kind: GitRepository
+    result: pass
+  - policy: verify-flux-sources
+    rule: flux-github-repositories
+    resource: good-gitrepository02
+    kind: GitRepository
+    result: pass
